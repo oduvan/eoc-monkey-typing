@@ -1,0 +1,98 @@
+<style>
+    p.quote-source {
+        float: right;
+        font-size: 10px;
+    }
+</style>
+
+<div class="for_info_only" style="text-align: center">
+    <img src="{{MEDIA}}title.png" style="max-height: 600px">
+</div>
+
+<div class="story">
+    <p>
+        ... Если я позволю своим пальцам праздно блуждать по клавишам пишущей машинки, может случиться, что у меня получится напечатать какое-нибудь осмысленное предложение. Если армия обезьян будет бить по клавишам пишущих машинок, они могут напечатать все книги Британского музея. Шанс, что они сделают это, определённо больше, чем вероятность того, что все молекулы соберутся в одной половине сосуда.
+    </p>
+
+    <p class="quote-source">
+        Артур Эддингтон «Природа физического мира», 1927.
+    </p>
+
+    <div style="clear: right;"></div>
+    <p></p>
+
+    <p>- Форд! — выговорил он, — там, снаружи, бесконечно много обезьян.
+    И они хотят обсудить с нами «Гамлета», который у них получился.</p>
+
+    <p class="quote-source">
+        Дуглас Адамс «Автостопом по галактике».
+    </p>
+
+</div>
+<p>
+    <a href="http://en.wikipedia.org/wiki/Infinite_monkey_theorem">Теорема о бесконечных обезьянах</a>
+    утверждает, что абстрактная обезьяна, ударяя случайным образом по клавишам пишущей машинки 
+    в течение неограниченно долгого времени, рано или поздно напечатает любой наперёд заданный текст, 
+    например, полное собрание сочинений 
+    <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BB%D0%BB%D0%B8%D1%81,_%D0%94%D0%B6%D0%BE%D0%BD">Джона Уоллиса</a> 
+    (хотя вероятнее какой-нибудь из романов <a href="https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B0%D1%83%D0%BD,_%D0%94%D1%8D%D0%BD">Дэна Брауна</a>).
+</p>
+
+<p>
+    Предположим, что наши обезьяны печтают, и печатают, и печатают, и уже настрочили множество разнообразных коротких отрывков текста. 
+    Давайте проверим их на вхождение осмысленных слов.
+</p>
+
+<p>
+    Вам предлагается некоторый текст, который может содержать осмысленные слова. 
+    Вы должны подсчитать количество таких слов в этом тексте. 
+    Слово может стоять отдельно, а может присутствовать как часть другого слова. 
+    Регистр букв не имеет значения. Слова даны в нижнем регистре и не повторяются. 
+    Если слово встречается в тексте несколько раз, оно должно быть посчитано только один раз.
+</p>
+
+
+<p>
+    Например, текст "How aresjfhdskfhskd you?", слова - ("how", "are", "you", "hello"). 
+    Результат должен быть равен 3.
+</p>
+
+<p>
+    <strong>Вход: </strong> Два аргумента. 
+    Текст как строка (юникод в Python 2) и слова в виде множества (set) строк (юникод в Python 2).
+</p>
+
+<p>
+    <strong>Выход: </strong> Количество слов в тексте в виде целого числа.
+</p>
+
+<p class="for_info_only">
+<strong>Пример:</strong>
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: python">
+countWords("How aresjfhdskfhskd you?", ["how", "are", "you", "hello"]) == 3
+countWords("Bananas, give me bananas!!!", ["banana", "bananas"]) == 2
+countWords("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+            ["sum", "hamlet", "infinity", "anything"]) == 1
+</pre>
+{% else %}
+<pre class="brush: python">
+count_words("How aresjfhdskfhskd you?", {"how", "are", "you", "hello"}) == 3
+count_words("Bananas, give me bananas!!!", {"banana", "bananas"}) == 2
+count_words("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+            {"sum", "hamlet", "infinity", "anything"}) == 1
+</pre>
+{% endif %}
+</p>
+
+<p class="for_info_only">
+    <strong>Как это используется: </strong>
+    Python удобный и мощный язык для обработки текстовых данных. 
+    В этой задаче приводится всего лишь простой пример инструментов для поиска в тексте, которые вы можете разрабатывать.
+</p>
+
+<p>
+    <strong>Предусловия:</strong><br>
+    0 &lt; len(text) &le; 256<br>
+    all(3 &le; len(w) and w.islower() and w.isalpha for w in words)
+</p>

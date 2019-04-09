@@ -1,0 +1,17 @@
+"use strict";
+
+function countWords(text, words){
+    return 0;
+}
+
+var assert = require('assert');
+
+if (!global.is_checking) {
+    console.log("Example:");
+    console.log(countWords("How aresjfhdskfhskd you?", ["how", "are", "you", "hello"]))
+
+    assert.equal(countWords("How aresjfhdskfhskd you?", ["how", "are", "you", "hello"]), 3, "Example");
+    assert.equal(countWords("Bananas, give me bananas!!!", ["banana", "bananas"]), 2, "BANANAS!");
+    assert.equal(countWords("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.", ["sum", "hamlet", "infinity", "anything"]), 1, "Weird text");
+    console.log("Coding complete? Click 'Check' to review your tests and earn cool rewards!");
+}
